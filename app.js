@@ -5,6 +5,20 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 
+// Require database string for connection
+const config = require('./config/database');
+
+// Connect to database via mongoose with connection string using { useNewUrlParser: true } to avoid deprecation warning
+mongoose.connect(config.databaseMD, { useNewUrlParser: true });
+
+// Confirmation of connection or error
+mongoose.connection.on('connected', () => {
+  console.log('Connected to MongoDB Atlas');
+});
+mongoose.connection.on('error', err => {
+  console.log(err);
+});
+
 const app = express();
 
 const users = require('./routes/users');
