@@ -14,6 +14,9 @@ const PORT = process.env.PORT || 3000;
 // CORS middleware
 app.use(cors());
 
+// Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Body Parser middleware
 app.use(bodyParser.json());
 
