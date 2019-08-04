@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "server": "nodemon app.js",
+    "client": "ng serve --open --prefix=angular-src",
+    "dev": "npm run client && npm run server "
   },
   "dependencies": {
     "express": "*",
