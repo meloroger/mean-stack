@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
-    "client": "ng serve --open --prefix=angular-src",
-    "dev": "npm run client && npm run server "
+    "client": "cd angular-src && ng serve --open "
   },
   "dependencies": {
     "express": "*",
