@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ValidateService } from './services/validate.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,13 @@ import { ValidateService } from './services/validate.service';
     DashboardComponent,
     ProfileComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FlashMessagesModule.forRoot()
+  ],
   providers: [ValidateService],
   bootstrap: [AppComponent]
 })
